@@ -7,6 +7,7 @@ import {
   FaEnvelope,
   FaArrowUp,
   FaYoutube,
+  FaTwitter,
 } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll"; // Import ScrollLink from react-scroll
 
@@ -73,11 +74,11 @@ function Footer() {
                   <FaYoutube />
                 </a>
               </li>
-              {/* <li className="list-group">
-                <a href="#">
-                  <FaEnvelope />
+              <li className="list-group">
+                <a href="https://x.com/Kachoria09">
+                  <FaTwitter />
                 </a>
-              </li> */}
+              </li>
             </ul>
           </div>
         </div>
