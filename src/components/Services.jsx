@@ -1,36 +1,45 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
 import { cardsData, serviceData } from "../database/services/data";
 import { useMyContext } from "../context/Context.jsx";
 import Modal from 'react-bootstrap/Modal';
 
 function Services() {
+  const navigate = useNavigate();
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const { cart, setCart } = useMyContext();
+  const [tab, setTab] = useState(0);
 
   const closeModal = () => {
     setShowConfirmationModal(false);
     setShowModal(false);
   };
 
-  const { cart, setcart } = useMyContext();
+  const viewBookings = () => {
+    closeModal();
+    navigate('/cart');
+  };
 
   function addToCart(item) {
     const cardContainer = cart.map((ele) => ele.cardContainer);
-    if (cart.includes(item)) {
+    if (cart.some(cartItem => JSON.stringify(cartItem) === JSON.stringify(item))) {
       setShowConfirmationModal(true);
     } else if (cardContainer.includes(item.cardContainer)) {
       setShowModal(true);
     } else {
-      setcart([...cart, item]);
+      setCart([...cart, item]);
     }
   }
 
-  const [tab, setTab] = useState(0); // Initialize tab index (only one tab now)
-
   const handleTabClick = (index) => {
     setTab(index);
+  };
+
+  // Check if a course is already in cart
+  const isCourseInCart = (course) => {
+    return cart.some(item => JSON.stringify(item) === JSON.stringify(course));
   };
 
   return (
@@ -66,25 +75,19 @@ function Services() {
         <section className="service-section">
           <div className="card-content-container">
             <div className="cards-container">
-              {/* Only showing Yoga courses */}
               {cardsData[tab].map((content, index) => (
                 <div key={index} className={`card-${content.className}`}>
                   <div className={`${content.cardContainer}`}>
-                    {/* Card Header */}
                     <div className={`card-header header-${content.className}`}>
                       <h3>{content.header}</h3>
                     </div>
-                    {/* Card Body */}
                     <div className="card-body">
                       {content.price && (
                         <p>
                           <h4>{content.price}</h4>
                         </p>
                       )}
-                      <div
-                        className={`card-element-hidden-${content.className}`}
-                      >
-                        {/* List of elements for the course */}
+                      <div className={`card-element-hidden-${content.className}`}>
                         <ul className="card-element-container">
                           {content.elements.map((element, elementIndex) => (
                             <li className="card-element" key={elementIndex}>
@@ -93,13 +96,21 @@ function Services() {
                             </li>
                           ))}
                         </ul>
-                        {/* Button to join the course */}
-                        <Link
-                          onClick={() => addToCart(content)}
-                          className={`btn btn-${content.className}`}
-                        >
-                          {content.buttonText}
-                        </Link>
+                        {isCourseInCart(content) ? (
+                          <Link
+                            to="/cart"
+                            className={`btn btn-${content.className}`}
+                          >
+                            View your Bookings
+                          </Link>
+                        ) : (
+                          <Link
+                            onClick={() => addToCart(content)}
+                            className={`btn btn-${content.className}`}
+                          >
+                            {content.buttonText}
+                          </Link>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -117,8 +128,11 @@ function Services() {
         </Modal.Header>
         <Modal.Body>You have already chosen this service.</Modal.Body>
         <Modal.Footer>
+          <button className="contact-btn" onClick={viewBookings}>
+            View your Bookings
+          </button>
           <button className="contact-btn" onClick={closeModal}>
-            OK, thanks for reminding.
+            OK
           </button>
         </Modal.Footer>
       </Modal>
@@ -132,8 +146,11 @@ function Services() {
           You have already chosen one level from this service.
         </Modal.Body>
         <Modal.Footer>
+          <button className="contact-btn" onClick={viewBookings}>
+            View your Bookings
+          </button>
           <button className="contact-btn" onClick={closeModal}>
-            Please select a different level.
+            OK
           </button>
         </Modal.Footer>
       </Modal>
