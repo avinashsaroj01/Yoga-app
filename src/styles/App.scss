@@ -1104,7 +1104,7 @@ footer {
   color: white;
   border-radius: 10px;
   border: none;
-  width: 8rem;
+  width: 10rem;
   margin-bottom: 2rem;
 }
 .services {
@@ -1134,6 +1134,9 @@ footer {
     .services {
       font-size: 1.5rem;
     }
+  }
+  .checkout{
+    white-space: nowrap;
   }
  
 }
