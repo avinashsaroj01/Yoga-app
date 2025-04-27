@@ -20,7 +20,7 @@ function BookingInfo({ availability, time, timezone, duration }) {
 function Demo() {
   const availability = ["Monday - Friday"];
   const time = "9:00am - 5:00pm";
-  const timezone = "Eastern Time";
+  const timezone = "Indian Standard Time";
   const duration = "1 hour";
 
   return (
