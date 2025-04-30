@@ -5,7 +5,7 @@ function Hero() {
     <div className="hero-container">
       <div className="hero">
         <div className="col1">
-          <h1>yoga</h1>
+          <h1>yog</h1>
           <h2>and meditation</h2>
         </div>
         <div className="col2 ">

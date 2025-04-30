@@ -4,7 +4,7 @@ import yogaWhiteIcon from "@services/yoga-white.png";
 /* Service Data Array */
 const serviceData = [
   {
-    title: "Yoga",
+    title: "Yog",
     activeIcon: yogaWhiteIcon,
     inActiveIcon: yogaGoldIcon,
   },
@@ -13,46 +13,47 @@ const serviceData = [
 /* Cards Data Array */
 const cardsData = [
   [
-    // Courses under Yoga service
+    // Courses under Yog service
     {
-      header: "Starter",
+      header: "Free Session",
       price: "0 Rs  ",
       buttonText: "Book now",
       className: "basic",
       cardContainer: "yoga",
       elements: [
-        "Online Yoga",
-        "For the duration of 4 sessions",
-        "45 minutes each Friday",
-        "Learn all the basic yoga poses",
+        "Online Yog ( Group yog)",
+        "1 hour each",
+        " 6-7 AM Mon-Fri",
+        "This session is for obesity, diabetes, alignment, and general fitness",
       ],
     },
     {
       header: "Professional",
-      price: "6000 Rs",
+      price: "9990 Rs",
       buttonText: "Book now",
       className: "standard",
       cardContainer: "yoga",
       elements: [
-        "In-person Yoga",
-        "For the duration of 6 weeks",
-        "3 sessions per week",
-        "Learn advance yoga poses",
+        "Online Yog ( One on One sessoin )",
+        "20 classes in a month",
+        " 1 hour each Mon-Fri",
+        "Diet Plan + Daily routine guidance",
+        "Disease specific yog practice",
       ],
     },
-    {
-      header: "Champion",
-      price: "12000 Rs",
-      buttonText: "Book now",
-      className: "premium",
-      cardContainer: "yoga",
-      elements: [
-        "Online Yoga",
-        "For the duration of 8 weeks",
-        "4 sessions per week",
-        "Cultivate inner peace & mindfulness",
-      ],
-    },
+    // {
+    //   header: "Champion",
+    //   price: "12000 Rs",
+    //   buttonText: "Book now",
+    //   className: "premium",
+    //   cardContainer: "yoga",
+    //   elements: [
+    //     "Online Yog",
+    //     "For the duration of 8 weeks",
+    //     "4 sessions per week",
+    //     "Cultivate inner peace & mindfulness",
+    //   ],
+    // },
   ],
 ];
 

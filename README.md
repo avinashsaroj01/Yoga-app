@@ -1,6 +1,6 @@
-# 🧘 Yoga and Meditation
+# 🧘 Yog and Meditation
 
-Welcome to the README file for the Yoga and Meditation web application. This project aims to create a holistic single-page website providing comprehensive information and services related to yoga, meditation, and wellness retreats. The website will be developed using a blend of HTML, CSS, JavaScript, Bootstrap, and React, with Vite serving as the streamlined development platform.
+Welcome to the README file for the Yog and Meditation web application. This project aims to create a holistic single-page website providing comprehensive information and services related to yoga, meditation, and wellness retreats. The website will be developed using a blend of HTML, CSS, JavaScript, Bootstrap, and React, with Vite serving as the streamlined development platform.
 
 ## 📚 Table of Contents
 

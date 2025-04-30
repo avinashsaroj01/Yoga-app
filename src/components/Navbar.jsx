@@ -47,11 +47,11 @@ function Navbar() {
         <div className="logo">
           <img
             src={logo}
-            alt="Satya Sanatan Yoga Logo"
+            alt="Satya Sanatan Yog Logo"
             className="logo-image"
           
           />
-          <h1>Satya Sanatan Yoga</h1>
+          <h1>Satya Sanatan Yog</h1>
         </div>
         <div>
           <ul className={`nav-menu ${isOpen ? "show-menu" : ""}`}>

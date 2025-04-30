@@ -48,7 +48,7 @@ function Footer() {
 
       <div className="footer-container">
         <div className="logo">
-          <h1>Yoga & Ayurveda</h1>
+          <h1>Yog & Ayurveda</h1>
         </div>
 
         <div className="about-me">
